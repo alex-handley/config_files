@@ -1,6 +1,10 @@
-h1. Joe Ferris' Config Files
+h1. Alex's Config Files
 
 a.k.a. dot files
+
+h2. Influences(copied them)
+
+jferris and gbernhardt
 
 h2. Install
 
