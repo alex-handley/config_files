@@ -1,10 +1,6 @@
 PROMPT='
 %{$fg[green]%}%~%b%{$reset_color%} $(git_time_since_commit)$(check_git_prompt_info) ${vcs_info_msg_0_}$ '
 
-# rubies are red, and my rprompt is too
-RPROMPT='%{$fg[tan]%}$(rvm_ruby_prompt)%{$reset_color%}%'
-
-
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%})"
 
@@ -19,14 +15,6 @@ ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[green]%}"
 ZSH_THEME_GIT_TIME_SHORT_COMMIT_MEDIUM="%{$fg[yellow]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[cyan]%}"
-
-# display Ruby information, only when RVM is installed and only when you are using a RVM installed ruby.
-function rvm_ruby_prompt {
-    ruby_version=$(~/.rvm/bin/rvm-prompt)
-    if [ -n "$ruby_version" ]; then
-		echo "[$ruby_version]"
-	fi
-}
 
 # Git sometimes goes into a detached head state. git_prompt_info doesn't
 # return anything in this case. So wrap it in another function and check
