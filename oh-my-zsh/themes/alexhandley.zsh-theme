@@ -10,25 +10,12 @@ ZSH_THEME_GIT_TIME_SHORT_COMMIT_MEDIUM="%{$fg[yellow]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[cyan]%}"
 
-# Git sometimes goes into a detached head state. git_prompt_info doesn't
-# return anything in this case. So wrap it in another function and check
-# for an empty string.
-function check_git_prompt_info() {
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        if [[ -z $(git_prompt_info) ]]; then
-            echo "%{$fg[magenta]%}detached-head%{$reset_color%})"
-        else
-            echo "$(git_prompt_info)"
-        fi
-    fi
-}
-
-# Determine if we are using a gemset.
-function rvm_gemset() {
-		ruby_version=$(~/.rvm/bin/rvm-prompt)
-    if [ -n "$ruby_version" ]; then
-			echo "$ruby_version|"
-		fi
+#Customized git status, oh-my-zsh currently does not allow render dirty status before branch
+git_custom_status() {
+  local cb=$(current_branch)
+  if [ -n "$cb" ]; then
+    echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  fi
 }
 
 # Determine the time since last commit. If branch is clean,
@@ -64,15 +51,12 @@ function git_time_since_commit() {
             fi
 
             if [ "$HOURS" -gt 24 ]; then
-                echo "($(rvm_gemset)$COLOR${DAYS}d${SUB_HOURS}h${SUB_MINUTES}m%{$reset_color%})"
+                echo "($COLOR${DAYS}d${SUB_HOURS}h${SUB_MINUTES}m%{$reset_color%})"
             elif [ "$MINUTES" -gt 60 ]; then
-                echo "($(rvm_gemset)$COLOR${HOURS}h${SUB_MINUTES}m%{$reset_color%}"
+                echo "($COLOR${HOURS}h${SUB_MINUTES}m%{$reset_color%})"
             else
-                echo "($(rvm_gemset)$COLOR${MINUTES}m%{$reset_color%})"
+                echo "($COLOR${MINUTES}m%{$reset_color%})"
             fi
-        else
-            COLOR="$ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL"
-            echo "($(rvm_gemset)$COLOR~)"
         fi
     fi
 }
