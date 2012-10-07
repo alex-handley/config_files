@@ -1,5 +1,5 @@
 PROMPT='
-%{$fg[green]%}%~%b%{$reset_color%} $(git_time_since_commit)$(check_git_prompt_info) ${vcs_info_msg_0_}$ '
+%{$fg[green]%}%~%b%{$reset_color%} $(check_git_prompt_info) ${vcs_info_msg_0_}$ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%})"
