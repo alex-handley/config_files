@@ -4,3 +4,4 @@ tags
 jferris-*.gemspec
 *.scratch.*
 .DS_Store
+.rvmrc

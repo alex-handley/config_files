@@ -16,6 +16,7 @@
   pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
 [alias]
   c = commit -m
+  cam = commit -am
   a = add
   di = diff
   dic = diff --cached
@@ -31,5 +32,6 @@
   pr = remote prune origin
   up = !git fetch origin && git rebase origin/master
   rbc = rebase --continue
+  co = checkout
   rbi = rebase -i
   mm = !test `git rev-parse master` = $(git merge-base HEAD master) && git checkout master && git merge HEAD@{1} || echo "Non-fastforward"
