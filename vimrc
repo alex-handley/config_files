@@ -11,7 +11,7 @@ set nocompatible
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 " remember more commands and search history
-" Show line numbers 
+" Show line numbers
 set number
 set history=10000
 set noexpandtab
@@ -74,11 +74,11 @@ augroup vimrcEx
     \ endif
 
   "for ruby, autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 noexpandtab 
+  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 noexpandtab
 
   autocmd FileType python set sw=4 sts=4 et
 
-  autocmd! BufRead,BufNewFile *.sass setfiletype sass 
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
@@ -93,7 +93,7 @@ augroup vimrcEx
   " to run commands there.
   autocmd! CmdwinEnter * :unmap <cr>
   autocmd! CmdwinLeave * :call MapCR()
-	
+
 	autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 
@@ -104,6 +104,9 @@ augroup END
 :set background=dark
 :color grb256
 
+" Highlight text over 80 characters
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -350,7 +353,8 @@ command! OpenChangedFiles :call OpenChangedFiles()
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP Commands 
+" CtrlP Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
