@@ -40,3 +40,9 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:/Users/alex/.rvm/gems/ruby-1.8.7-p358/bin:/Users/alex/.rvm/gems/ruby-1.8.7-p358@global/bin:/Users/alex/.rvm/rubies/ruby-1.8.7-p358/bin:/Users/alex/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 
 export EDITOR=vim
+
+export DYLD_LIBRARY_PATH="/opt/oracle/instantclient_11_2"
+export SQLPATH="/opt/oracle/instantclient_11_2"
+#export TNS_ADMIN="/opt/oracle/network/admin"
+export NLS_LANG="AMERICAN_AMERICA.UTF8"
+export PATH=$PATH:$DYLD_LIBRARY_PATH
