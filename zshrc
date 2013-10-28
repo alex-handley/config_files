@@ -37,7 +37,7 @@ plugins=(git alexhandley)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/Users/alex/.rvm/gems/ruby-1.8.7-p358/bin:/Users/alex/.rvm/gems/ruby-1.8.7-p358@global/bin:/Users/alex/.rvm/rubies/ruby-1.8.7-p358/bin:/Users/alex/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+export PATH=$PATH:/usr/local/bin:/Users/alex/.rvm/gems/ruby-1.8.7-p358/bin:/Users/alex/.rvm/gems/ruby-1.8.7-p358@global/bin:/Users/alex/.rvm/rubies/ruby-1.8.7-p358/bin:/Users/alex/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 
 export EDITOR=vim
 
