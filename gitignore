@@ -8,3 +8,4 @@ jferris-*.gemspec
 .powrc
 .ruby-gemset
 .ruby-version
+database.dump
