@@ -57,6 +57,8 @@ set wildmode=longest,list
 set wildmenu
 let mapleader=","
 
+execute pathogen#infect()
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -277,6 +279,3 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/]\.(git)|coverage|tmp|spec/fixtures|public$'
   \ }
-
-call pathogen#runtime_append_all_bundles()
-
