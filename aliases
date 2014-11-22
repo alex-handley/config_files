@@ -24,4 +24,3 @@ alias hdeploy="git push staging master && heroku rake db:migrate --app \${\$(pwd
 alias hconsole="heroku console --app \${\$(pwd):t}-staging"
 alias b="bundle"
 alias be="bundle exec"
-

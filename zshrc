@@ -46,3 +46,5 @@ export SQLPATH="/opt/oracle/instantclient_11_2"
 #export TNS_ADMIN="/opt/oracle/network/admin"
 export NLS_LANG="AMERICAN_AMERICA.UTF8"
 export PATH=$PATH:$DYLD_LIBRARY_PATH
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
