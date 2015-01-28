@@ -21,6 +21,6 @@ zstyle ':prezto:load' pmodule \
   'tmux' \
   'utility' \
   'prompt'
-...
+
 # presto theme
-zstyle ':prezto:module:prompt' theme 'superlinh'
+zstyle ':prezto:module:prompt' theme 'sorin'
