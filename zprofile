@@ -9,3 +9,9 @@ export EDITOR=vim
 # recommended by brew doctor
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin'
 
+export GOPATH='/Users/alex/exercism/go'
+
+export GOPATH=/Users/alex/exercism/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
