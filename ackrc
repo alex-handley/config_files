@@ -10,3 +10,4 @@
 --ignore-dir=vendor
 --ignore-dir=log
 --ignore-dir=coverage
+--ignore-dir=tmp
