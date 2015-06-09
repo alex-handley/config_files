@@ -35,3 +35,6 @@
   co = checkout
   rbi = rebase -i
   mm = !test `git rev-parse master` = $(git merge-base HEAD master) && git checkout master && git merge HEAD@{1} || echo "Non-fastforward"
+[pull]
+  rebase = true
+
