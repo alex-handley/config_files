@@ -26,6 +26,7 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'scrooloose/syntastic'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -327,3 +328,13 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/]\.(git)|coverage|tmp|spec/fixtures|public$'
   \ }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:syntastic_eruby_checkers = []
+let g:syntastic_ruby_checkers = ["mri", "rubocop"]
+let g:syntastic_ruby_mri_args = "-wc"
+let g:syntastic_check_on_open = 0
+
