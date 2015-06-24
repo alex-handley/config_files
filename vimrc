@@ -1,4 +1,4 @@
-if has('vim_starting')
+if has("vim_starting")
   if &compatible
     set nocompatible               " Be iMproved
   endif
@@ -8,28 +8,28 @@ if has('vim_starting')
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle'))
+call neobundle#begin(expand("~/.vim/bundle"))
 
 " Let NeoBundle manage NeoBundle
 " Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundleFetch "Shougo/neobundle.vim"
 
 " Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'scrooloose/syntastic'
+NeoBundle "Shougo/neosnippet.vim"
+NeoBundle "Shougo/neosnippet-snippets"
+NeoBundle "tpope/vim-fugitive"
+NeoBundle "ctrlpvim/ctrlp.vim"
+NeoBundle "flazz/vim-colorschemes"
+NeoBundle "kien/ctrlp.vim"
+NeoBundle "kchmck/vim-coffee-script"
+NeoBundle "tpope/vim-commentary"
+NeoBundle "airblade/vim-gitgutter"
+NeoBundle "tpope/vim-repeat"
+NeoBundle "tpope/vim-surround"
+NeoBundle "scrooloose/syntastic"
 
 " You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+NeoBundle "Shougo/vimshell", { "rev" : "3787e5" }
 
 " Required:
 call neobundle#end()
@@ -126,7 +126,7 @@ augroup vimrcEx
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
 
   " Indent p tags
-  autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
+  autocmd FileType html,eruby if g:html_indent_tags !~ "\\|p\>" | let g:html_indent_tags .= "\|p\|li\|dt\|dd" | endif
 
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType mkd setlocal syn=off
@@ -149,10 +149,10 @@ colorscheme railscasts
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " match OverLength /\%81v.\+/
 
-if exists('+colorcolumn')
+if exists("+colorcolumn")
   set colorcolumn=80
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd("ErrorMsg", "\%>80v.\+", -1)
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -185,8 +185,8 @@ nnoremap <leader><leader> <c-^>
 " Indent if we're at the beginning of a line. Else, do completion.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! InsertTabWrapper()
-	let col = col('.') - 1
-	if !col || getline('.')[col - 1] !~ '\k'
+	let col = col(".") - 1
+	if !col || getline(".")[col - 1] !~ "\k"
 		return "\<tab>"
 	else
 		return "\<c-p>"
@@ -207,11 +207,11 @@ map <Down> <Nop>
 " RENAME CURRENT FILE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
+    let old_name = expand("%")
+    let new_name = input("New file name: ", expand("%"), "file")
+    if new_name != "" && new_name != old_name
+        exec ":saveas " . new_name
+        exec ":silent !rm " . old_name
         redraw!
     endif
 endfunction
@@ -222,25 +222,25 @@ map <leader>n :call RenameFile()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! OpenTestAlternate()
   let new_file = AlternateForCurrentFile()
-  exec ':e ' . new_file
+  exec ":e " . new_file
 endfunction
 function! AlternateForCurrentFile()
   let current_file = expand("%")
   let new_file = current_file
-  let in_spec = match(current_file, '^spec/') != -1
+  let in_spec = match(current_file, "^spec/") != -1
   let going_to_spec = !in_spec
-  let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<views\>') || match(current_file, '\<helpers\>') != -1
+  let in_app = match(current_file, "\<controllers\>") != -1 || match(current_file, "\<models\>") != -1 || match(current_file, "\<views\>") || match(current_file, "\<helpers\>") != -1
   if going_to_spec
     if in_app
-      let new_file = substitute(new_file, '^app/', '', '')
+      let new_file = substitute(new_file, "^app/", "", "")
     end
-    let new_file = substitute(new_file, '\.rb$', '_spec.rb', '')
-    let new_file = 'spec/' . new_file
+    let new_file = substitute(new_file, "\.rb$", "_spec.rb", "")
+    let new_file = "spec/" . new_file
   else
-    let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
-    let new_file = substitute(new_file, '^spec/', '', '')
+    let new_file = substitute(new_file, "_spec\.rb$", ".rb", "")
+    let new_file = substitute(new_file, "^spec/", "", "")
     if in_app
-      let new_file = 'app/' . new_file
+      let new_file = "app/" . new_file
     end
   endif
   return new_file
@@ -252,7 +252,7 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+map <leader>a :call RunTests("")<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
 
@@ -264,7 +264,7 @@ function! RunTestFile(...)
     endif
 
     " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+    let in_test_file = match(expand("%"), "\(.feature\|_spec.rb\)$") != -1
     if in_test_file
         call SetTestFile()
     elseif !exists("t:grb_test_file")
@@ -274,7 +274,7 @@ function! RunTestFile(...)
 endfunction
 
 function! RunNearestTest()
-    let spec_line_number = line('.')
+    let spec_line_number = line(".")
     call RunTestFile(":" . spec_line_number . " -b")
 endfunction
 
@@ -292,7 +292,7 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    if match(a:filename, '\.feature$') != -1
+    if match(a:filename, "\.feature$") != -1
         exec ":!script/features " . a:filename
     else
         if filereadable("script/test")
@@ -310,8 +310,8 @@ endfunction
 " Open a split for each dirty file in git
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! OpenChangedFiles()
-  only " Close all windows, unless they're modified
-  let status = system('git status -s | grep "^ \?\(M\|A\|UU\)" | sed "s/^.\{3\}//"')
+  only " Close all windows, unless they"re modified
+  let status = system("git status -s | grep "^ \?\(M\|A\|UU\)" | sed "s/^.\{3\}//"")
   let filenames = split(status, "\n")
   exec "edit " . filenames[0]
   for filename in filenames[1:]
@@ -323,10 +323,10 @@ command! OpenChangedFiles :call OpenChangedFiles()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_map = "<c-p>"
+let g:ctrlp_cmd = "CtrlP"
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.(git)|coverage|tmp|spec/fixtures|public$'
+  \ "dir": "\v[\/]\.(git)|coverage|tmp|spec/fixtures|public$"
   \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
