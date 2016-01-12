@@ -15,18 +15,24 @@ call neobundle#begin(expand("~/.vim/bundle"))
 NeoBundleFetch "Shougo/neobundle.vim"
 
 " Add or remove your Bundles here:
-NeoBundle "Shougo/neosnippet.vim"
-NeoBundle "Shougo/neosnippet-snippets"
-NeoBundle "tpope/vim-fugitive"
-NeoBundle "ctrlpvim/ctrlp.vim"
-NeoBundle "flazz/vim-colorschemes"
-NeoBundle "kien/ctrlp.vim"
-NeoBundle "kchmck/vim-coffee-script"
-NeoBundle "tpope/vim-commentary"
-NeoBundle "airblade/vim-gitgutter"
-NeoBundle "tpope/vim-repeat"
-NeoBundle "tpope/vim-surround"
-NeoBundle "scrooloose/syntastic"
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'jgdavey/vim-turbux'
+NeoBundle 'cakebaker/scss-syntax.vim'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'elixir-lang/vim-elixir'
 
 " You can specify revision/branch/tag.
@@ -327,15 +333,15 @@ command! OpenChangedFiles :call OpenChangedFiles()
 let g:ctrlp_map = "<c-p>"
 let g:ctrlp_cmd = "CtrlP"
 let g:ctrlp_custom_ignore = {
-  \ "dir": "\v[\/]\.(git)|coverage|tmp|spec/fixtures|public$"
+  \ 'dir': '\v[\/]\.(git)|coverage|tmp|spec/fixtures|public|node_modules$'
   \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:syntastic_eruby_checkers = []
-let g:syntastic_ruby_checkers = ["mri", "rubocop"]
-let g:syntastic_ruby_mri_args = "-wc"
-let g:syntastic_check_on_open = 0
-
+"let g:syntastic_eruby_checkers = []
+"let g:syntastic_ruby_checkers = ["mri", "rubocop"]
+"let g:syntastic_ruby_mri_args = "-wc"
+"let g:syntastic_check_on_open = 0
+"

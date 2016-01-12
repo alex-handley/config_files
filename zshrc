@@ -31,6 +31,9 @@ alias hdeploy="git push staging master && heroku rake db:migrate --app \${\$(pwd
 alias hconsole="heroku console --app \${\$(pwd):t}-staging"
 alias b="bundle"
 alias be="bundle exec"
+alias vi="/usr/local/bin/vim"
 
 # Case insensitive globbing
 setopt NO_CASE_GLOB
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
