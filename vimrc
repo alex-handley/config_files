@@ -27,6 +27,7 @@ NeoBundle "airblade/vim-gitgutter"
 NeoBundle "tpope/vim-repeat"
 NeoBundle "tpope/vim-surround"
 NeoBundle "scrooloose/syntastic"
+NeoBundle 'elixir-lang/vim-elixir'
 
 " You can specify revision/branch/tag.
 NeoBundle "Shougo/vimshell", { "rev" : "3787e5" }
