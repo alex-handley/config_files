@@ -48,9 +48,9 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" BASIC EDITING CONFIGURATION
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" BASIC EDITING CONFIGURATION
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
@@ -176,17 +176,17 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-" Insert a hash rocket with <c-l>
-imap <c-l> <space>=><space>
-" Can't be bothered to understand ESC vs <c-c> in insert mode
-imap <c-c> <esc>
-" Clear the search buffer when hitting return
-function! MapCR()
-  nnoremap <cr> :nohlsearch<cr>
-endfunction
-call MapCR()
-nnoremap <leader><leader> <c-^>
-
+"" Insert a hash rocket with <c-l>
+"imap <c-l> <space>=><space>
+"" Can't be bothered to understand ESC vs <c-c> in insert mode
+"imap <c-c> <esc>
+"" Clear the search buffer when hitting return
+"function! MapCR()
+"  nnoremap <cr> :nohlsearch<cr>
+"endfunction
+"call MapCR()
+"nnoremap <leader><leader> <c-^>
+"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -209,20 +209,6 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RENAME CURRENT FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RenameFile()
-    let old_name = expand("%")
-    let new_name = input("New file name: ", expand("%"), "file")
-    if new_name != "" && new_name != old_name
-        exec ":saveas " . new_name
-        exec ":silent !rm " . old_name
-        redraw!
-    endif
-endfunction
-map <leader>n :call RenameFile()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE
@@ -286,8 +272,8 @@ function! RunNearestTest()
 endfunction
 
 function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
+   " Set the spec file that tests will be run for.
+   let t:grb_test_file=@%
 endfunction
 
 function! RunTests(filename)
@@ -313,21 +299,6 @@ function! RunTests(filename)
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OpenChangedFiles COMMAND
-" Open a split for each dirty file in git
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! OpenChangedFiles()
-  only " Close all windows, unless they"re modified
-  let status = system("git status -s | grep "^ \?\(M\|A\|UU\)" | sed "s/^.\{3\}//"")
-  let filenames = split(status, "\n")
-  exec "edit " . filenames[0]
-  for filename in filenames[1:]
-    exec "sp " . filename
-  endfor
-endfunction
-command! OpenChangedFiles :call OpenChangedFiles()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = "<c-p>"
@@ -336,12 +307,12 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/]\.(git)|coverage|tmp|spec/fixtures|public|node_modules$'
   \ }
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"let g:syntastic_eruby_checkers = []
-"let g:syntastic_ruby_checkers = ["mri", "rubocop"]
-"let g:syntastic_ruby_mri_args = "-wc"
-"let g:syntastic_check_on_open = 0
 "
+"""let g:syntastic_eruby_checkers = []
+"""let g:syntastic_ruby_checkers = ["mri", "rubocop"]
+"""let g:syntastic_ruby_mri_args = "-wc"
+"""let g:syntastic_check_on_open = 0
+"""
