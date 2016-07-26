@@ -13,4 +13,5 @@
 --ignore-dir=tmp
 --ignore-dir=public/assets
 --ignore-dir=node_modules
+--ignore-dir=deps
 --ignore-file=is:eagle_seeds.sql
