@@ -289,3 +289,8 @@ let g:ctrlp_custom_ignore = {
 """let g:syntastic_ruby_mri_args = "-wc"
 """let g:syntastic_check_on_open = 0
 """
+
+" Map paste toggle to F2 and show mode
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
