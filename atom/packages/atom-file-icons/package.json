@@ -1,0 +1,57 @@
+{
+  "_from": "https://www.atom.io/api/packages/atom-file-icons/versions/0.6.0/tarball",
+  "_id": "atom-file-icons@0.6.0",
+  "_inBundle": false,
+  "_integrity": "sha512-ov17uGod8pe/u4QV2nKNK+oTGjTTkAPD19Qr/7rqhOxaGerHaQ0H0ZD9ZRxiZAgIr7VVYFnYfbh5YO89OC5pgA==",
+  "_location": "/atom-file-icons",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/atom-file-icons/versions/0.6.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-file-icons/versions/0.6.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-file-icons/versions/0.6.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-file-icons/versions/0.6.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/atom-file-icons/versions/0.6.0/tarball",
+  "_shasum": "9e20a4a7079156f56a5205b5d36d276100f5b3e9",
+  "_spec": "https://www.atom.io/api/packages/atom-file-icons/versions/0.6.0/tarball",
+  "_where": "/private/var/folders/z1/cln93wvd7jg6wdqymx_j6rlw0000gn/T/apm-install-dir-119024-12682-zlkobv.a18a",
+  "bugs": {
+    "url": "https://github.com/donovanhiland/atom-file-icons/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "logo style icons and ui tweaks to mirror vscode",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/donovanhiland/atom-file-icons#readme",
+  "keywords": [
+    "icons",
+    "file-icons",
+    "vscode",
+    "folders",
+    "file-tree",
+    "file tree",
+    "logos",
+    "fileicons",
+    "file icons",
+    "visual studio code",
+    "vscode",
+    "vsc",
+    "vscode-icons"
+  ],
+  "license": "MIT",
+  "main": "./lib/atom-file-icons",
+  "name": "atom-file-icons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donovanhiland/atom-file-icons.git"
+  },
+  "version": "0.6.0"
+}

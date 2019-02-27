@@ -1,0 +1,12 @@
+"*":
+  "autocomplete-python":
+    useKite: false
+  core:
+    telemetryConsent: "no"
+  editor:
+    fontSize: 12
+  "exception-reporting":
+    userId: "1d8d251b-f748-40d7-b33c-c8951ee52a76"
+  "linter-ui-default": {}
+  welcome:
+    showOnStartup: false
