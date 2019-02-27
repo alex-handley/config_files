@@ -10,7 +10,6 @@
 --ignore-dir=vendor
 --ignore-dir=log
 --ignore-dir=coverage
---ignore-dir=tmp
 --ignore-dir=public/assets
 --ignore-dir=node_modules
 --ignore-dir=deps
