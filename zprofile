@@ -15,3 +15,4 @@ export GOPATH=/Users/alex/exercism/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+export PATH="/Users/alex/anaconda2/bin:$PATH"
