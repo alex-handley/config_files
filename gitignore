@@ -8,3 +8,6 @@ tags
 .ruby-gemset
 .ruby-version
 database.dump
+__pycache__
+.atom-socket-secret-*
+atom/config.cson
