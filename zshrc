@@ -32,16 +32,17 @@ alias hconsole="heroku console --app \${\$(pwd):t}-staging"
 alias b="bundle"
 alias be="bundle exec"
 alias vi="/usr/local/bin/vim"
+alias apipending="git log --pretty=oneline --abbrev-commit \"$(curl -s https://api.junglescout.com/api/am_i_alive | jq -r '.message')..master\""
 
 # Case insensitive globbing
 setopt NO_CASE_GLOB
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export PATH="/Users/alexhandley/.local/bin:$PATH"
 
 # Fixes bug with commit signing
 # https://dev.gnupg.org/T3412
 # https://github.com/keybase/keybase-issues/issues/1712
 GPG_TTY=$(tty)
 export GPG_TTY
-

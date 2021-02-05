@@ -11,16 +11,16 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'homebrew' \
   'osx' \
-  'ruby' \
-  'rails' \
-  'git' \
-  'node' \
-  'python' \
-  'haskell' \
   'syntax-highlighting' \
-  'tmux' \
   'utility' \
   'prompt'
+#  'ruby' \
+#  'rails' \
+#  'git' \
+#  'node' \
+#  'python' \
+#  'haskell' \
+#  'tmux' \
 
 # presto theme
 zstyle ':prezto:module:prompt' theme 'sorin'
